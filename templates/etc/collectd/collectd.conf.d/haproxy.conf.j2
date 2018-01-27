@@ -1,0 +1,18 @@
+# {{ ansible_managed }}
+
+<LoadPlugin python>
+  Globals true
+</LoadPlugin>
+
+<Plugin python>
+  ModulePath "{{ ubuntu_1604_collectd_haproxy_install_path }}/haproxy.py"
+
+  Import haproxy
+
+  <Module haproxy>
+    Socket "/var/lib/haproxy/stats"
+{% for monitor in ubuntu_1604_collectd_haproxy_proxy_monitors | default([]) %}
+    ProxyMonitor "{{ monitor }}"
+{% endfor %}
+  </Module>
+</Plugin>

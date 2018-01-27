@@ -1,0 +1,4 @@
+# vars file for ubuntu-1604-collectd-haproxy
+---
+ubuntu_1604_collectd_haproxy_download_url: https://github.com/signalfx/collectd-haproxy
+ubuntu_1604_collectd_haproxy_install_path: /usr/share/collectd/haproxy

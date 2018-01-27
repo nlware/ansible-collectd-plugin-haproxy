@@ -1,0 +1,7 @@
+# defaults file for ubuntu-1604-collectd-haproxy
+---
+ubuntu_1604_collectd_haproxy_tag: v1.0.1
+
+ubuntu_1604_collectd_haproxy_proxy_monitors:
+  - frontend
+  - backend
