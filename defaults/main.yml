@@ -1,7 +1,8 @@
-# defaults file for ubuntu-1604-collectd-haproxy
+# defaults file for collectd-plugin-haproxy
 ---
-ubuntu_1604_collectd_haproxy_tag: v1.0.1
-
-ubuntu_1604_collectd_haproxy_proxy_monitors:
+collectd_plugin_haproxy_version: v1.0.1
+collectd_plugin_haproxy_socket: /var/run/haproxy.sock
+collectd_plugin_haproxy_proxy_monitors:
   - frontend
   - backend
+  - server

@@ -1,8 +1,9 @@
-# test file for ubuntu-1604-collectd-haproxy
+# test file for collectd-plugin-haproxy
 ---
---
-- hosts: localhost
-  connection: local
+- hosts: all
+  remote_user: vagrant
   become: true
+  pre_tasks:
+    - include: pre.yml
   roles:
-- ../../
+    - ../../

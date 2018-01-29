@@ -1,4 +1,11 @@
-# vars file for ubuntu-1604-collectd-haproxy
+# vars file for collectd-plugin-haproxy
 ---
-ubuntu_1604_collectd_haproxy_download_url: https://github.com/signalfx/collectd-haproxy
-ubuntu_1604_collectd_haproxy_install_path: /usr/share/collectd/haproxy
+collectd_plugin_haproxy_dependencies:
+  - git-core
+
+collectd_plugin_haproxy_checkout_url: https://github.com/signalfx/collectd-haproxy.git
+collectd_plugin_haproxy_checkout_path: /var/lib/ansible/collectd-plugin-haproxy/checkouts/collectd-haproxy
+
+collectd_plugin_haproxy_configuration_file: /etc/collectd/collectd.conf.d/haproxy.conf
+
+collectd_plugin_haproxy_install_path: /usr/share/collectd/haproxy
