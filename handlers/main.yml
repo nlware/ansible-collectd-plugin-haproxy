@@ -1,6 +1,7 @@
-# handlers file for ubuntu-1604-collectd-haproxy
+# handlers file for collectd-plugin-haproxy
 ---
 - name: restart collectd
   service:
     name: collectd
     state: restarted
+  when: service_default_state | default('started') == 'started'
