@@ -1,6 +1,7 @@
 # meta file for collectd-plugin-haproxy
 ---
 galaxy_info:
+  role_name: collectd-plugin-haproxy
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Ansible role to set up the SignalFx HAProxy plugin for Collectd in Debian-like systems
