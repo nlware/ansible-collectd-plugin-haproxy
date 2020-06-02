@@ -1,7 +1,7 @@
 # vars file for collectd-plugin-haproxy
 ---
 collectd_plugin_haproxy_dependencies:
-  - git-core
+  - git
 
 collectd_plugin_haproxy_checkout_url: https://github.com/signalfx/collectd-haproxy.git
 collectd_plugin_haproxy_checkout_path: /var/lib/ansible/collectd-plugin-haproxy/checkouts/collectd-haproxy
