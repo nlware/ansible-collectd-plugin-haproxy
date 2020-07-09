@@ -2,11 +2,10 @@
 ---
 - name: install dependencies
   apt:
-    name: "{{ item }}"
+    name: "{{ collectd_plugin_haproxy_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: "{{ collectd_plugin_haproxy_dependencies }}"
   tags:
     - configuration
     - collectd-plugin-haproxy
@@ -32,7 +31,6 @@
     dest: "{{ collectd_plugin_haproxy_checkout_path }}"
     version: "{{ collectd_plugin_haproxy_version }}"
     force: true
-  register: _git_checkout
   notify: restart collectd
   tags:
     - configuration
@@ -61,7 +59,7 @@
     group: root
     mode: 0755
   with_items: "{{ _stat_directories.results }}"
-  when: item.stat.exists == false
+  when: not item.stat.exists
   tags:
     - configuration
     - collectd-plugin-haproxy

@@ -2,9 +2,8 @@
 ---
 - name: pre | install dependencies
   apt:
-    name: "{{ item }}"
+    name:
+      - collectd
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items:
-    - collectd
