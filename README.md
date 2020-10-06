@@ -6,7 +6,7 @@ Ansible role to set up the [SignalFx HAProxy plugin](https://github.com/signalfx
 
 #### Requirements
 
- * `git-core` (will be installed)
+ * `git` (will be installed)
  * `collectd` (will not be installed)
 
 #### Variables
