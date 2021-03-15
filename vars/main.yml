@@ -1,4 +1,4 @@
-# vars file for collectd-plugin-haproxy
+# vars file
 ---
 collectd_plugin_haproxy_dependencies:
   - git

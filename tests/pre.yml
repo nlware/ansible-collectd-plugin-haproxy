@@ -1,4 +1,4 @@
-# pre test file for collectd-plugin-haproxy
+# pre test file
 ---
 - name: pre | install dependencies
   apt:

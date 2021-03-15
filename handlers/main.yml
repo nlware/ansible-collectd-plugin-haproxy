@@ -1,4 +1,4 @@
-# handlers file for collectd-plugin-haproxy
+# handlers file
 ---
 - name: restart collectd
   service:
