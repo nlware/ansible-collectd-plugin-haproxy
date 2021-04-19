@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   namespace: oefenweb
-  role_name: collectd-plugin-haproxy
+  role_name: collectd_plugin_haproxy
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Ansible role to set up the SignalFx HAProxy plugin for Collectd in Debian-like systems
@@ -11,9 +11,9 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
         - xenial
         - bionic
+        - focal
     - name: Debian
       versions:
         - jessie
