@@ -1,11 +1,20 @@
 # pre test file
 ---
-# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
-- name: ensure man directory
-  file:
-    path: /usr/share/man/man1
-    state: directory
-    recurse: true
+- block:
+
+    # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
+    - name: ensure man directory
+      file:
+        path: /usr/share/man/man1
+        state: directory
+        recurse: true
+
+    - name: ensure man directory
+      lineinfile:
+        path: /etc/collectd/collectd.conf.d/df.conf
+        state: absent
+        regexp: '^\s+ReportReserved'
+
   when:
     - ansible_distribution == 'Ubuntu'
     - ansible_distribution_major_version is version('18', '>=')
