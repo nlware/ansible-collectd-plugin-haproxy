@@ -1,6 +1,7 @@
 # defaults file
 ---
-collectd_plugin_haproxy_version: v1.0.1
+collectd_plugin_haproxy_checkout_url: https://github.com/signalfx/collectd-haproxy.git
+collectd_plugin_haproxy_version: v1.0.4
 collectd_plugin_haproxy_socket: /var/run/haproxy.sock
 collectd_plugin_haproxy_proxy_monitors:
   - frontend
