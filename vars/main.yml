@@ -3,7 +3,6 @@
 collectd_plugin_haproxy_dependencies:
   - git
 
-collectd_plugin_haproxy_checkout_url: https://github.com/signalfx/collectd-haproxy.git
 collectd_plugin_haproxy_checkout_path: /var/lib/ansible/collectd-plugin-haproxy/checkouts/collectd-haproxy
 
 collectd_plugin_haproxy_configuration_file: /etc/collectd/collectd.conf.d/haproxy.conf

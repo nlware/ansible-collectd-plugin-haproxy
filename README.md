@@ -1,6 +1,7 @@
 ## collectd-plugin-haproxy
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-collectd-plugin-haproxy.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-collectd-plugin-haproxy) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-collectd--plugin--haproxy-blue.svg)](https://galaxy.ansible.com/Oefenweb/collectd-plugin-haproxy)
+[![CI](https://github.com/Oefenweb/ansible-collectd-plugin-haproxy/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-collectd-plugin-haproxy/actions?query=workflow%3ACI)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-collectd--plugin--haproxy-blue.svg)](https://galaxy.ansible.com/Oefenweb/collectd_plugin_haproxy)
 
 Ansible role to set up the [SignalFx HAProxy plugin](https://github.com/signalfx/collectd-haproxy) for Collectd in Debian-like systems.
 

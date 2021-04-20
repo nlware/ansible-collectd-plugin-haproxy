@@ -1,0 +1,4 @@
+# vars file
+---
+collectd_plugin_haproxy_checkout_url: https://github.com/Oefenweb/collectd-haproxy.git
+collectd_plugin_haproxy_version: python-3.x-fix
