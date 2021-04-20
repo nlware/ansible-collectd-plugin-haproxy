@@ -1,20 +1,11 @@
 # pre test file
 ---
-- block:
-
-    # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
-    - name: ensure man directory
-      file:
-        path: /usr/share/man/man1
-        state: directory
-        recurse: true
-
-    - name: ensure man directory
-      lineinfile:
-        path: /etc/collectd/collectd.conf.d/df.conf
-        state: absent
-        regexp: '^\s+ReportReserved'
-
+# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
+- name: ensure man directory
+  file:
+    path: /usr/share/man/man1
+    state: directory
+    recurse: true
   when:
     - ansible_distribution == 'Ubuntu'
     - ansible_distribution_major_version is version('18', '>=')
@@ -26,3 +17,12 @@
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+
+# See: https://bugs.launchpad.net/ubuntu/+source/collectd/+bug/1872281
+- name: fix python plugin not working
+  lineinfile:
+    path: /etc/default/collectd
+    line: 'LD_PRELOAD=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu/libpython3.8.so'
+  when:
+    - ansible_distribution == 'Ubuntu'
+    - ansible_distribution_major_version is version('20', '>=')
