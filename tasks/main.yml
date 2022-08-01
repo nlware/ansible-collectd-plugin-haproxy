@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ collectd_plugin_haproxy_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -13,7 +13,7 @@
     - collectd-plugin-haproxy-install-dependencies
 
 - name: create (checkout) directory
-  file:
+  ansible.builtin.file:
     path: "{{ collectd_plugin_haproxy_checkout_path }}"
     state: directory
     owner: root
@@ -26,7 +26,7 @@
     - collectd-plugin-haproxy-checkout-directory
 
 - name: checkout repository
-  git:
+  ansible.builtin.git:
     repo: "{{ collectd_plugin_haproxy_checkout_url }}"
     dest: "{{ collectd_plugin_haproxy_checkout_path }}"
     version: "{{ collectd_plugin_haproxy_version }}"
@@ -39,7 +39,7 @@
     - collectd-plugin-haproxy-checkout-repository
 
 - name: stat directories
-  stat:
+  ansible.builtin.stat:
     path: "{{ item }}/"
   register: _stat_directories
   with_items:
@@ -52,7 +52,7 @@
     - collectd-plugin-haproxy-configure-directories-stat
 
 - name: create directories
-  file:
+  ansible.builtin.file:
     path: "{{ item.item }}"
     state: directory
     owner: root
@@ -67,7 +67,7 @@
     - collectd-plugin-haproxy-configure-directories-create
 
 - name: configure plugin
-  template:
+  ansible.builtin.template:
     src: "{{ collectd_plugin_haproxy_configuration_file.lstrip('/') }}.j2"
     dest: "{{ collectd_plugin_haproxy_configuration_file }}"
     owner: root
@@ -81,7 +81,7 @@
     - collectd-plugin-haproxy-plugin-configure
 
 - name: enable plugin
-  file:
+  ansible.builtin.file:
     src: "{{ collectd_plugin_haproxy_checkout_path }}/haproxy.py"
     dest: "{{ collectd_plugin_haproxy_install_path }}/haproxy.py"
     state: link
