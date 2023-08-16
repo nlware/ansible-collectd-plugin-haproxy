@@ -3,7 +3,7 @@
 [![CI](https://github.com/Oefenweb/ansible-collectd-plugin-haproxy/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-collectd-plugin-haproxy/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-collectd--plugin--haproxy-blue.svg)](https://galaxy.ansible.com/Oefenweb/collectd_plugin_haproxy)
 
-Ansible role to set up the [SignalFx HAProxy plugin](https://github.com/signalfx/collectd-haproxy) for Collectd in Debian-like systems.
+Ansible role to set up the [SignalFx HAProxy plugin](https://github.com/Oefenweb/collectd-haproxy) for Collectd in Debian-like systems.
 
 #### Requirements
 
@@ -12,7 +12,7 @@ Ansible role to set up the [SignalFx HAProxy plugin](https://github.com/signalfx
 
 #### Variables
 
-* `collectd_plugin_haproxy_version`: [default: `v1.0.1`]: Version to install (e.g. `master`)
+* `collectd_plugin_haproxy_version`: [default: `v1.0.4`]: Version to install (e.g. `python-3.x-fix`)
 
 * `collectd_plugin_haproxy_socket`: [default: `/var/run/haproxy.sock`]: Stats socket to get data from
 * `collectd_plugin_haproxy_proxy_monitors`: [default: `['frontend', 'backend', 'server']`]: Proxy monitors
