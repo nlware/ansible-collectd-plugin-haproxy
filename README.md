@@ -29,7 +29,7 @@ None
 ---
 - hosts: all
   roles:
-    - collectd-plugin-haproxy
+    - oefenweb.collectd-plugin-haproxy
 ```
 
 ##### Advanced
@@ -38,7 +38,7 @@ None
 ---
 - hosts: all
   roles:
-    - collectd-plugin-haproxy
+    - oefenweb.collectd-plugin-haproxy
   vars:
     collectd_plugin_haproxy_version: master
     collectd_plugin_haproxy_socket: /run/haproxy/admin-1.sock
